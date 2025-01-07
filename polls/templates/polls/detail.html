@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is the Django Polls Home Page.">
+        <meta name="keywords" content="polls, questions, choices, votes">
+        <title>
+            {% block title %}
+                Django Polls Detail Page
+            {% endblock title %}
+        </title>
+    </head>
+    <body>
+        {% block body %}
+            <h1>{{ question.question_text }}</h1>
+            <ul>
+                {% for choice in question.choice_set.all %}
+                    <li>{% choice.choice_text %}</li>
+                {% endfor %}
+            </ul>
+        {% endblock body %}
+    </body>
+</html>
