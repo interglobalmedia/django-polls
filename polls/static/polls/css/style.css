@@ -1,0 +1,11 @@
+body {
+    background: white url("../images/david-clode-J_5xvghAvmc-unsplash.jpg") center center no-repeat;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+
+li a {
+    color: #00ffff;
+}
