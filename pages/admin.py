@@ -1,6 +1,8 @@
 from django.contrib import admin
+
 # from .models import HomePage
 from .models import HomePage
+
 
 class HomePageAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -9,6 +11,6 @@ class HomePageAdmin(admin.ModelAdmin):
     list_display = ["site_name", "site_tagline"]
     search_fields = ["site_name"]
 
+
 # Register your models here.
 admin.site.register(HomePage, HomePageAdmin)
-
