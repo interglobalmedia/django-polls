@@ -4,7 +4,9 @@
         <h1 class="results-heading">{{ question.question_text }}</h1>
         <ul class="choices-list">
             {% for choice in question.choice_set.all %}
-                <li class="results-choice"><a href="{% url 'polls:index' %}">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</a></li>
+                <li class="results-choice">
+                    <a href="{% url 'polls:index' %}">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</a>
+                </li>
             {% endfor %}
         </ul>
         <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
