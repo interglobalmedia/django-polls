@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="This is the Django Polls Home Page.">
-        <meta name="keywords" content="polls, questions, choices, votes">
-        <title>
-            {% block title %}
-                Django Polls Results Page
-            {% endblock title %}
-        </title>
-    </head>
-    <body>
-        {% block body %}
-            <h1>{{ question.question_text }}</h1>
-            <ul>
-                {% for choice in question.choice_set.all %}
-                    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-                {% endfor %}
-            </ul>
-            <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
-        {% endblock body %}
-    </body>
-</html>
+{% extends "polls/base.html" %}
+{% block content %}
+    <div class="results-wrapper">
+        <h1 class="results-heading">{{ question.question_text }}</h1>
+        <ul class="choices-list">
+            {% for choice in question.choice_set.all %}
+                <li class="results-choice"><a href="{% url 'polls:index' %}">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+    </div>
+{% endblock content %}
