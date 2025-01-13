@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is the Django Polls Home Page.">
+    <meta name="keywords"
+          content="Django, Python, polls, questions, choices, votes">
+    <title>
+      {% block title %}
+        Django Home Page App
+      {% endblock title %}
+    </title>
+    {% block stylesheet %}
+      <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+    {% endblock stylesheet %}
+  </head>
+  <body>
+    {% block body %}
+    <div class="grid-container">
+    {% include "includes/header-pages.html" %}
+    {%block content %}
+    {% endblock content %}
+    </div>
+       {% include "includes/pages-footer.html" %}
+    {% endblock body %}
+  </body>
+</html>

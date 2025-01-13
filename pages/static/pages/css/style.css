@@ -1,52 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Peralta&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Peralta&family=Quicksand:wght@300..700&display=swap');
 
-:root {
-  --primary: #243642;
-  --secondary: #387478;
-  --accent: #629584;
-  --neutral: #e2f1e7;
-  font-family: system-ui, sans-serif;
-}
-
 /* header styling */
+:root {
+    --primary: #243642;
+    --secondary: #387478;
+    --accent: #629584;
+    --neutral: #e2f1e7;
+    font-family: system-ui, sans-serif;
+}
 
 *,
 *::before,
 * ::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    background-color: var(--neutral);
     background: var(--neutral) url("../images/david-clode-J_5xvghAvmc-unsplash.jpg") center center no-repeat;
-    font-family: "Quicksand", sans-serif;
-    /* sticky footer related styling */
     display: flex;
     flex-direction: column;
+    font-family: "Quicksand", sans-serif;
     min-height: 100vh;
-    /*  end sticky footer related styling */
     overflow-x: hidden;
 }
 
-/* sticky footer related styling */
-
+/* sticky footer styling */
 .grid-container {
-    display: table;
-    height: 100vh;
+    display:grid;
+    grid-template-rows:auto 1fr auto;
+    grid-template-columns:100%;
 
     /* fallback height */
     min-height:100vh;
 
     /* new small viewport height for modern browsers */
     min-height:100svh;
-    width: 100%;
+    overflow-x: hidden;
 }
-
 /* end sticky footer styling */
 
 .app-header {
+    /* this is what actually gives the navigation its background color */
     background-color: var(--primary);
     padding: 1.25rem;
 }
@@ -55,8 +53,8 @@ body {
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin-inline: auto;
     max-width: 80rem;
+    margin-inline: auto;
 }
 
 .navbar__brand {
@@ -91,12 +89,14 @@ body {
 }
 
 @media (min-width: 768px) {
-  .navbar__sm-menu-toggle:checked ~ .navbar__sm-menu-overlay {
-      display: none;
-  }
+    .navbar__sm-menu-toggle:checked ~ .navbar__sm-menu-overlay {
+        display: none;
+    }
 }
+
 .navbar__sm-menu-toggle:checked ~ .navbar__nav.navbar__nav--sm {
     left: 0;
+    z-index: 2;
 }
 
 .navbar__sm-menu-label {
@@ -110,7 +110,7 @@ body {
 
 @media (min-width: 768px) {
   .navbar__sm-menu-label {
-      display: none;
+    display: none;
   }
 }
 
@@ -127,9 +127,11 @@ body {
 .navbar__sm-menu-label span:first-child {
     top: 8px;
 }
+
 .navbar__sm-menu-label span:nth-child(2) {
     top: 20px;
 }
+
 .navbar__sm-menu-label span:last-child {
     top: 32px;
 }
@@ -148,40 +150,43 @@ body {
     gap: 1.25rem;
     list-style: none;
 }
+
 @media (min-width: 768px) {
-  .navbar__nav {
-      flex-direction: row;
-  }
+    .navbar__nav {
+        flex-direction: row;
+    }
 }
 
 .navbar__nav--sm {
-    backdrop-filter: blur(1rem);
     background-color: rgb(36 54 66 / 0.75);
+    backdrop-filter: blur(1rem);
     bottom: 0;
     left: -240px;
-    right: 0;
-    top: 0;
-    width: 100%;
     max-width: 240px;
     padding: 1.25rem;
     position: absolute;
+    right: 0;
+    top: 0;
     transition: left 300ms ease-in-out;
+    width: 100%;
 }
+
 @media (min-width: 768px) {
-  .navbar__nav--sm {
-      background-color: unset;
-      max-width: fit-content;
-      padding: 0;
-      position: unset;
-  }
+    .navbar__nav--sm {
+        background-color: unset;
+        max-width: fit-content;
+        padding: 0;
+        position: unset;
+    }
 }
 
 .navbar__nav-link {
     color: var(--neutral);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 500;
     text-decoration: none;
 }
+
 .navbar__nav-link:active,
 .navbar__nav-link:hover {
     color: var(--accent);
@@ -198,46 +203,46 @@ body {
     font-size: clamp(2.25rem, 2vw + 1rem, 3rem);
     text-align: center;
 }
-
 /* end header styling */
 
-.polls-wrapper {
-    margin-top: 1.5rem;
-    padding: 2rem;
-}
-
-.polls-heading {
-    color: #fff;
-    font-size: 2.75rem;
-    margin-bottom: 1.5rem;
-}
-
-.latest-question-list, .latest-question-list a {
-    color: #2e73ea;
-    font-size: 1.2rem;
-    letter-spacing: 0.07em;
-    margin-left: 1.5rem;
-}
-
-.polls-wrapper a {
+.pages-wrapper {
     color: #072f49;
     display: block;
-    padding: 8px 14px;
+    left: 50%;
+    padding: 2rem;
+    position: absolute;
+    text-align: center;
     text-decoration: none;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
-.polls-wrapper ul li {
+.pages-wrapper ul li, .pages-wrapper ul li:nth-of-type(1) {
     display: block;
     list-style: none;
-    margin-bottom: 1.3rem;
+    margin-bottom: 10px;
 }
 
-.polls-wrapper li a {
+.pages-wrapper li, .pages-wrapper li:nth-of-type(1) {
     background: rgb(245 245 245 / 1);
     color: #072f49;
     display: inline-block;
+    padding: 1rem;
     -webkit-transition: background 0.3s ease;
     -moz-transition: background 0.3s ease;
     -o-transition: background 0.3s ease;
     transition: background 0.3s ease;
+}
+
+.pages-wrapper ul li:nth-of-type(1) {
+    margin-bottom: 3rem;
+}
+
+.site-name {
+    font-size: 2.2rem;
+}
+
+.site-tagline {
+    font-size: 1.3rem;
 }

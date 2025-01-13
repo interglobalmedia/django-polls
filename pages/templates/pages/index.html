@@ -1,0 +1,13 @@
+{% extends "pages/base.html" %}
+{% block content %}
+    <div class="pages-wrapper">
+        {% if pages %}
+            <ul class="pages">
+                {% for page in pages %}
+                    <li {% if page.site_name %}class="site-name"{% endif %}>{{ page.site_name }}</li>
+                    <li {% if page.site_tagline %}class="site-tagline"{% endif %}>{{ page.site_tagline }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+{% endblock content %}
