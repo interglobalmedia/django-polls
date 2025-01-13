@@ -309,15 +309,15 @@ input[type="radio"] {
     /* Adjust this value to control the circle size */
     height: 1.1rem;
     /* Adjust this value to control the circle size */
-    width: 1.1rem; 
+    width: 1.1rem;
 }
 
 input[type="radio"]:checked:before {
     /* Color of the filled circle when checked */
     background-color: #007667;
     border: 2px solid #ccc;
-    border-radius: 50%; 
-    content: ''; 
+    border-radius: 50%;
+    content: '';
     display: block;
     /* Adjust this value to control the filled circle size */
     height: 1.1rem;
