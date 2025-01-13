@@ -1,6 +1,9 @@
+{% comment %}
+djlint:off H020,H021
+{% endcomment %}
 <header class="app-header">
     <nav class="navbar">
-        <a href="/" class="navbar__brand">
+        <a href="{% url 'pages:index' %}" class="navbar__brand">
             <svg height="96px"
                  width="96px"
                  version="1.1"
@@ -31,7 +34,7 @@
         <label for="navbar__sm-menu-toggle" class="navbar__sm-menu-overlay"></label>
         <ul class="navbar__nav navbar__nav--sm">
             <li class="navbar__nav-item">
-                <a href="{% url 'polls:index' %}" class="navbar__nav-link"></a>
+                <a href="{% url 'pages:index' %}" class="navbar__nav-link">Home</a>
             </li>
         </ul>
     </nav>
