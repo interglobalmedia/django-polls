@@ -3,15 +3,17 @@
 {% block extrastyle %}
     {{ block.super }}
     <link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">
-{% endblock %}
+{% endblock extrastyle %}
 {% block coltype %}
     colMS
 {% endblock coltype %}
 {% block bodyclass %}
     {{ block.super }} dashboard
 {% endblock bodyclass %}
-{% block nav-breadcrumbs %}{% endblock %}
-{% block nav-sidebar %}{% endblock %}
+{% block nav-breadcrumbs %}
+{% endblock nav-breadcrumbs %}
+{% block nav-sidebar %}
+{% endblock nav-sidebar %}
 {% block content %}
     <div id="content-main">{% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}</div>
 {% endblock content %}
@@ -23,7 +25,7 @@
             {% load log %}
             {% get_admin_log 10 as admin_log for_user user %}
             {% if not admin_log %}
-                <p>{% translate 'None available' %}</p>
+                <p>{% translate "None available" %}</p>
             {% else %}
                 <ul class="actionlist">
                     {% for entry in admin_log %}
