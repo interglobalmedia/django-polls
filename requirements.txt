@@ -34,7 +34,6 @@ django-heroku==0.3.1
 django-js-asset==3.0.1
 django-markdown==0.8.4
 django-mdeditor==0.1.20
-django-polls @ file:///Users/mariacam/Python-Development/packages/django-polls/dist/django_polls-0.1.tar.gz#sha256=003467c813af76b3de6fa0e8c44f4c2a67414f25e2b181bcd2053fb51f66ffc5
 django-secretballot==2.0.0
 django-storages==1.14.4
 django-widget-tweaks==1.5.0
@@ -69,7 +68,6 @@ packaging==24.2
 pathspec==0.12.1
 pillow==10.4.0
 platformdirs==4.3.6
-polls @ file:///Users/mariacam/Python-Development/packages/django-polls/dist/polls-0.1.tar.gz#sha256=0dac41a0e121b9b462287a26ab515bd42bcbfbd713ae9b230d6b1fc0744f7d7b
 pre_commit==4.0.1
 psutil==6.0.0
 psycopg==3.2.3
