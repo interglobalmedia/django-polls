@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is the Django Polls Home Page.">
+        <meta name="keywords"
+              content="Django, Python, polls, questions, choices, votes">
+        <title>
+            {% block title %}
+                Django Polls Home Page
+            {% endblock title %}
+        </title>
+        {% block stylesheet %}
+            <link rel="stylesheet" href="{% static 'polls/css/style.css' %}">
+        {% endblock stylesheet %}
+    </head>
+    <body class="site">
+        {% block body %}
+            <div class="grid-container">
+                {% include "includes/header-main.html" %}
+                {% block content %}
+                {% endblock content %}
+            </div>
+            {% include "includes/polls-footer.html" %}
+        {% endblock body %}
+        <!-- JQuery -->
+        {% block javascript %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+                    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+                    crossorigin="anonymous"
+                    referrerpolicy="no-referrer"></script>
+        {% endblock javascript %}
+    </body>
+</html>
