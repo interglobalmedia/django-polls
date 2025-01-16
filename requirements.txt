@@ -12,7 +12,6 @@ Brotli==1.1.0
 build==1.2.2.post1
 certifi==2024.12.14
 cffi==1.17.1
-cfgv==3.4.0
 charset-normalizer==3.4.1
 click==8.1.8
 colorama==0.4.6
@@ -22,7 +21,6 @@ cryptography==44.0.0
 cssbeautifier==1.15.1
 decorator==5.1.1
 dill==0.3.8
-distlib==0.3.9
 dj-database-url==2.3.0
 Django==5.1.4
 django-appconf==1.0.6
@@ -41,7 +39,6 @@ djlint==1.36.4
 dnspython==2.7.0
 docutils==0.21.2
 EditorConfig==0.17.0
-filelock==3.16.1
 graphviz==0.20.3
 gunicorn==23.0.0
 h11==0.14.0
@@ -50,7 +47,6 @@ html-void-elements==0.1.0
 html5lib==1.1
 humanize==4.11.0
 hyperlink==21.0.0
-identify==2.6.5
 idna==3.10
 imagesize==1.4.1
 incremental==24.7.2
@@ -63,12 +59,9 @@ Markdown==3.7
 MarkupSafe==3.0.2
 mccabe==0.7.0
 nh3==0.2.18
-nodeenv==1.9.1
 packaging==24.2
 pathspec==0.12.1
 pillow==10.4.0
-platformdirs==4.3.6
-pre_commit==4.0.1
 psutil==6.0.0
 psycopg==3.2.3
 psycopg-binary==3.2.3
@@ -90,7 +83,6 @@ regex==2024.11.6
 requests==2.32.3
 s3transfer==0.10.4
 service-identity==24.2.0
-setuptools==75.8.0
 shortuuid==1.0.13
 six==1.17.0
 snowballstemmer==2.2.0
@@ -111,7 +103,6 @@ txaio==23.1.1
 typing_extensions==4.12.2
 urllib3==2.3.0
 uvicorn==0.34.0
-virtualenv==20.28.1
 wcwidth==0.2.13
 webencodings==0.5.1
 whitenoise==6.8.2
